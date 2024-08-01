@@ -45,3 +45,13 @@ def get_clean(html_string):
     else:
         html_string = '<div>' + html_string + '</div>'
     return get_clean_text(html_string)
+
+def clean_options(x):
+    x = eval(x)
+    if x == []:
+        return ''
+    else:
+        options = []
+        for opt in x:
+            options.append(get_clean(opt))
+        return ', '.join(options)
